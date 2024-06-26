@@ -14,11 +14,10 @@ C. MQAX PDOB XYLX CNZQ
 D. MQAX PDOB XZLX CNZP
 
 Correct answer:
-
 A. MQAX PDOB XZLX CNZQ
 
 Solution:
-Create the Playfair key matrix using the keyword "CIPHER":
+1) Create the Playfair key matrix using the keyword "CIPHER":
 
 C I P H E
 R A B D F
@@ -26,10 +25,11 @@ G K L M N
 O Q S T U
 V W X Y Z
 
-Split the plaintext message into pairs, adding "X" where necessary to avoid duplicates:
+2) Split the plaintext message into pairs, adding "X" where necessary to avoid duplicates:
 
 EX AM PL EN OT TE ST -> EX AM PL EN OT TE ST
-Encrypt each pair using the Playfair matrix:
+
+3) Encrypt each pair using the Playfair matrix:
 
 EX -> MQ (E and X form a rectangle: E maps to M, X maps to Q)
 AM -> PD (A and M form a rectangle: A maps to P, M maps to D)
@@ -38,7 +38,8 @@ EN -> XZ (E and N form a rectangle: E maps to X, N maps to Z)
 OT -> LX (O and T form a rectangle: O maps to L, T maps to X)
 TE -> CN (T and E form a rectangle: T maps to C, E maps to N)
 ST -> ZQ (S and T form a rectangle: S maps to Z, T maps to Q)
-Combine the encrypted pairs: MQAX PDOB XZLX CNZQ
+
+4) Combine the encrypted pairs: MQAX PDOB XZLX CNZQ
 
 Encrypted message: MQAX PDOB XZLX CNZQ
 
