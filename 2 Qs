@@ -44,3 +44,69 @@ ST -> ZQ (S and T form a rectangle: S maps to Z, T maps to Q)
 Encrypted message: MQAX PDOB XZLX CNZQ
 
 Source: Lecture 06, Symmetric Crypto, slides 24-26
+
+
+Question for Exam 2:
+Compute the CRC-4 value for the message "B3A" using the polynomial 
+x^4 + x^2 + x (represented as 10110 in binary).
+
+Use the following steps:
+
+1) Pad the message with zeroes.
+2) Divide the padded message by the polynomial using binary XOR.
+3) The remainder is the CRC value.
+
+Possible answers:
+
+A. 0011
+
+B. 0110
+
+C. 1100
+
+D. 0101
+
+Correct answer:
+
+B. 0110
+
+Solution:
+1) Convert the message "B3A" to binary and pad it with four zeroes:
+
+"B" -> 1011
+"3" -> 0011
+"A" -> 1010
+Padded message: 1011 0011 1010 0000
+
+2) Polynomial: x^4 + x^2 + x -> 10110
+
+3) Perform binary division using XOR:
+
+Step 1: 1011 0011 1010 0000
+          10110
+         ------
+         00010 0011 1010 0000
+               10110
+               -----
+               01101 0000 0000
+                     10110
+                     -----
+                     11010 0000
+                           10110
+                           -----
+                           01100 0000
+                                 10110
+                                 -----
+                                 00010 0000
+                                       10110
+                                       -----
+                                       10110
+                                       10110
+                                       -----
+                                       00000
+
+The remainder after the division is 0110.
+
+4) Therefore, the CRC-4 value is 0110.
+
+Source: Lecture 14, Integrity Checking, slide #9
